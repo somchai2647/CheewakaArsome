@@ -1,5 +1,5 @@
 <?php
 
-$conn = new mysqli('localhost','root','','omg');
+$conn = new mysqli('remotemysql.com','RQrfN7VYpv','tI1f03HRTH','RQrfN7VYpv');
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);

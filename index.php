@@ -156,33 +156,33 @@
                         data
                     },
                     success: function(response) {
-                        // if (response == 1) {
-                        //     window.location.href = "main.php";
-                        // } else if (response == 2) {
-                        //     Swal.fire(
-                        //         'ไม่สามารถเข้าสู่ระบบได้',
-                        //         'รอการอนุญาต',
-                        //         'info'
-                        //     );
-                        // } else if (response == 3) {
-                        //     Swal.fire(
-                        //         'ไม่สามารถเข้าสู่ระบบได้',
-                        //         'เนื่องจากบัญชีถูกระงับชั่วคราว',
-                        //         'warning'
-                        //     )
-                        // } else if (response == 4) {
-                        //     Swal.fire(
-                        //         'ไม่สามารถเข้าสู่ระบบได้',
-                        //         'ไม่มีบัญชีดังกล่าว',
-                        //         'warning'
-                        //     )
-                        // } else {
-                        //     Swal.fire(
-                        //         'ไม่สามารถเข้าสู่ระบบได้',
-                        //         'QUERY ERROR',
-                        //         'error'
-                        //     )
-                        // }
+                        if (response == 1) {
+                            window.location.href = "main.php";
+                        } else if (response == 2) {
+                            Swal.fire(
+                                'ไม่สามารถเข้าสู่ระบบได้',
+                                'รอการอนุญาต',
+                                'info'
+                            );
+                        } else if (response == 3) {
+                            Swal.fire(
+                                'ไม่สามารถเข้าสู่ระบบได้',
+                                'เนื่องจากบัญชีถูกระงับชั่วคราว',
+                                'warning'
+                            )
+                        } else if (response == 4) {
+                            Swal.fire(
+                                'ไม่สามารถเข้าสู่ระบบได้',
+                                'ไม่มีบัญชีดังกล่าว',
+                                'warning'
+                            )
+                        } else {
+                            Swal.fire(
+                                'ไม่สามารถเข้าสู่ระบบได้',
+                                'QUERY ERROR',
+                                'error'
+                            )
+                        }
                     }
                 });
             });

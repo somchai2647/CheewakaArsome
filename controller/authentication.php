@@ -69,8 +69,10 @@ if (isset($_REQUEST['login'])) {
                 echo 1;
             } else if ($rows['user_status'] == 'b') {
                 echo 3;
-            } else {
+            } else if ($rows['user_status'] == 'w') {
                 echo 2;
+            } else {
+                echo 5;
             }
         } else {
             echo 0;
@@ -83,6 +85,7 @@ if (isset($_REQUEST['login'])) {
     // 2 คือ รอการอนุมัติ
     // 3 คือ บัชญีถูกระงับ
     // 4 คือ ไม่มีบัญชี
+    // 5 คือ ชื่อผู้ใช้งานหรือรหัสผ่านผิด
 }
 if (isset($_POST['logout'])) {
     session_destroy();

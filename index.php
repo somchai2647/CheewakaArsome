@@ -1,6 +1,7 @@
 <?php include "controller/connect.php"; ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -172,9 +173,16 @@
                         } else if (response == 4) {
                             Swal.fire(
                                 'ไม่สามารถเข้าสู่ระบบได้',
-                                'ไม่มีบัญชีดังกล่าว',
+                                'ไม่พบบัญชีดังกล่าว',
                                 'warning'
                             )
+                        } else if (response == 5) {
+                            Swal.fire(
+                                'ไม่สามารถเข้าสู่ระบบได้',
+                                'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง',
+                                'warning'
+                            )
+
                         } else {
                             Swal.fire(
                                 'ไม่สามารถเข้าสู่ระบบได้',

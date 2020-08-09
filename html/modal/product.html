@@ -1,0 +1,84 @@
+    <!-- Modal AddProduct -->
+    <div class="modal fade" id="addproductModal" tabindex="-1" role="dialog" aria-labelledby="addproductModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addproductModalLabel">เพิ่มสินค้า</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="addproductform" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="hidden" name="uploadproduct">
+                        <input type="file" name="p_picture" id="p_picture" accept="image/*" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <button type="button" class="btn btn-sm btn-success btnimgproduct"><i
+                                        class="fas fa-camera"> เพิ่มรูป</i></button>
+                                &nbsp;<a id="filename">แนะนำรูปขนาด 128*128 (4:3)</a>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="p_name">ชื่อสินค้า</label>
+                                <input type="text" class="form-control" name="p_name" id="p_name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="p_detail">คำอธิบายสินค้า</label>
+                                <input type="text" class="form-control" name="p_detail" id="p_detail" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-lg-4">
+                                <label for="p_categorye">ประเภทสินค้า</label>
+                                <select name="p_category" class="form-control" id="p_category">
+                                    <option value="ยังไม่ระบุ">ยังไม่ระบุ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-lg-4">
+                                <label for="p_price">ราคาสินค้า</label>
+                                <input type="number" class="form-control" name="p_price" id="p_price" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-lg-4">
+                                <label for="p_stock">จำนวนสินค้า (สต๊อกสินค้า)</label>
+                                <input type="number" class="form-control" name="p_stock" id="p_stock" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">เพิ่มสินค้า</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal EditProduct -->
+    <div class="modal fade" id="editproductmodal" tabindex="-1" role="dialog" aria-labelledby="editproductModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form id="editproductform" enctype="multipart/form-data">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editproductModalLabel">แก้ไขสินค้า</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="areaeditpro">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" id="saveeditpro">บันทึก</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

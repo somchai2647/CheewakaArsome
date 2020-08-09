@@ -1,0 +1,53 @@
+<?php
+include "connect.php";
+$user_id = $_SESSION['user_id'];
+if (isset($_POST['countcart'])) {
+    $sql = "SELECT COUNT(*) AS countcart FROM `cart` WHERE user_id = '$user_id'";
+    $result = $conn->query($sql);
+    $rows = $result->fetch_array();
+    echo $rows['countcart'];
+}
+
+if (isset($_POST['addcart'])) {
+    $product_id = $conn->escape_string($_POST['id']);
+    $sql = "SELECT * FROM `cart` WHERE product_id = '$product_id' LIMIT 1";
+    $result = $conn->query($sql);
+    if ($num = $result->num_rows != 1) {
+        $quantity = 1;
+        $sql = "INSERT INTO `cart`(`id`, `user_id`, `product_id`, `quantity`) VALUES ('','$user_id','$product_id','$quantity')";
+        $result = $conn->query($sql);
+        echo 1;
+    } else {
+        echo 2;
+    }
+}
+if (isset($_POST['delprolist'])) {
+    $id = $conn->escape_string($_POST['id']);
+    $sql = "DELETE FROM `cart` WHERE `cart`.`id` = '$id'";
+    $result = $conn->query($sql);
+    if ($result) {
+        echo 1;
+    } else {
+        echo 0;
+    }
+}
+if (isset($_POST['clearcart'])) {
+    $sql = "DELETE FROM `cart` WHERE user_id = '$user_id'";
+    $result = $conn->query($sql);
+    if ($result) {
+        echo 1;
+    } else {
+        echo 0;
+    }
+}
+if (isset($_POST['updatequantity'])) {
+    $id = $conn->escape_string($_POST['id']);
+    $value = $conn->escape_string($_POST['value']);
+    $sql = "UPDATE `cart` SET `quantity` = '$value' WHERE `cart`.`id` = '$id'";
+    $result = $conn->query($sql);
+    if ($result) {
+        echo 1;
+    } else {
+        echo 0;
+    }
+}

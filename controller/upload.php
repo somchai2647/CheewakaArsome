@@ -15,8 +15,8 @@ if (isset($_REQUEST['uploadproduct'])) {
         $img_rename = "product" . uniqid() . '.png';
         copy("../products/noproduct.png", "../products/img/$img_rename");
     }
-    $sql = "INSERT INTO `product`(`product_id`, `product_name`, `product_detail`, `product_category`, `product_price`, `product_stock`, `product_img`) VALUES 
-    ('','$p_name','$p_detail','$p_category','$p_price','$p_stock','$img_rename')";
+    $sql = "INSERT INTO `product`(`product_name`, `product_detail`, `product_category`, `product_price`, `product_stock`, `product_img`) VALUES 
+    ('$p_name','$p_detail','$p_category','$p_price','$p_stock','$img_rename')";
     $result = $conn->query($sql);
     if ($result) {
         if(!file_exists("../products/img/$img_rename")){
@@ -28,6 +28,6 @@ if (isset($_REQUEST['uploadproduct'])) {
         }
 
     } else {
-        echo 0;
+        // echo 0;
     }
 }

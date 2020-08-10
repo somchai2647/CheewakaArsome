@@ -14,7 +14,7 @@ if (isset($_POST['addcart'])) {
     $result = $conn->query($sql);
     if ($num = $result->num_rows != 1) {
         $quantity = 1;
-        $sql = "INSERT INTO `cart`(`id`, `user_id`, `product_id`, `quantity`) VALUES ('','$user_id','$product_id','$quantity')";
+        $sql = "INSERT INTO `cart`(`user_id`, `product_id`, `quantity`) VALUES ('$user_id','$product_id','$quantity')";
         $result = $conn->query($sql);
         echo 1;
     } else {

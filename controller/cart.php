@@ -16,7 +16,9 @@ if (isset($_POST['addcart'])) {
         $quantity = 1;
         $sql = "INSERT INTO `cart`(`user_id`, `product_id`, `quantity`) VALUES ('$user_id','$product_id','$quantity')";
         $result = $conn->query($sql);
-        echo 1;
+        if ($result) {
+            echo 1;
+        }
     } else {
         echo 2;
     }

@@ -105,12 +105,36 @@
                                         ?>
                                   </form>
                               </tbody>
+                              <tfoot>
+                                  <tr>
+                                      <th class="text-center">
+
+                                      </th>
+                                      <th class="text-center">
+
+                                      </th>
+                                      <th class="text-center">
+
+                                      </th>
+                                      <th class="text-center" style="width: 10%">
+
+                                      </th>
+                                      <th class="text-right">
+                                          ราคาสุทธิ:
+                                      </th>
+                                      <th class="text-center" id="total">
+                                                0.00
+                                      </th>
+                                      <th style="width: 20%" class="text-center">
+
+                                      </th>
+                                  </tr>
+                              </tfoot>
                           </table>
                       </div>
                       <!-- /.card-body -->
                   </div>
                   <!-- /.card -->
-
               </section>
               <!-- /.content -->
           </div><!-- /.container-fluid -->

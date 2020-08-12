@@ -25,7 +25,7 @@
                       <div class="card-header">
                           <h3 class="card-title">รายการสั่งสินค้า</h3>
                           <div class="card-tools">
-                              <button class="btn btn-sm btn-success mr-4" <?php echo ($num > 0) ? "" : "disabled"; ?>>สั่งสินค้า</button>
+                              <button class="btn btn-sm btn-success mr-4" <?php echo ($num > 0) ? "" : "disabled"; ?> id="submitcart">สั่งสินค้า</button>
                               <button id="clearcart" class="btn btn-sm btn-danger mr-4" <?php echo ($num > 0) ? "" : "disabled"; ?>>นำสินค้าออกทั้งหมด</button>
                               <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                   <i class="fas fa-minus"></i></button>
@@ -79,7 +79,7 @@
                                                       <input type="number" class="form-control form-control-sm quantity" name="quantity[]" min="1" value="<?php echo ($product['quantity'] != 0) ? $product['quantity'] : 0; ?>">
                                                   </td>
                                                   <td class="text-center">
-                                                      <input type="hidden" id="product_price<?php echo $product['id']; ?>" value="<?php echo $product['product_price']; ?>">
+                                                      <input type="hidden" class="productprice" name="product_price[]" id="product_price<?php echo $product['id']; ?>" value="<?php echo $product['product_price']; ?>">
                                                       <?php echo $product['product_price']; ?>
                                                   </td>
                                                   <td class="text-center" id="showprice<?php echo $product['id']; ?>">

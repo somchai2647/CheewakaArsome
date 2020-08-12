@@ -81,7 +81,12 @@ $(document).ready(function () {
     let xx = x.toFixed(2);
     let updatequantity = "";
     $('#showprice' + id).text(xx + ".-");
-    $.post("./controller/cart.php", {updatequantity,value,id});
+    $.post("./controller/cart.php", { updatequantity, value, id });
     // console.log(x);
+  });
+  $('#submitcart').click(function (e) {
+    e.preventDefault();
+    let cart = $('#formcart').serializeArray();
+    console.log(cart);
   });
 });

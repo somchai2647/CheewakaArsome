@@ -59,14 +59,14 @@
                                 Please Sign in now</h3>
                             <form class="row contact_form" id="loginform">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="name" name="name" value="" placeholder="รหัสผู้ใช้งาน">
+                                    <input type="text" class="form-control" id="name" name="name" value="<?php echo (isset($_COOKIE['user_id']))? $_COOKIE['user_id'] : ''; ?>" placeholder="รหัสผู้ใช้งาน">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
                                     <input type="password" class="form-control" id="password" name="password" value="" placeholder="รหัสผ่าน">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <!-- <div class="creat_account d-flex align-items-center">
-                                        <input type="checkbox" id="f-option" name="selector">
+                                        <input type="checkbox" id="f-option" name="rememberme" <?php echo (isset($_COOKIE['user_id']))? 'checked' : ''; ?>>
                                         <label for="f-option">Remember me</label>
                                     </div> -->
                                     <button type="submit" value="submit" class="btn_3" style="cursor: pointer;">
@@ -196,7 +196,7 @@
         });
     </script>
 
-    <?php include_once "html/modal/authmodal.php"; ?>
+    <?php //include_once "html/modal/authmodal.php"; ?>
 </body>
 
 </html>

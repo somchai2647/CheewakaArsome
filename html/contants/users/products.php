@@ -29,7 +29,7 @@
                                 if ($num = $result->num_rows > 0) {
                                     while ($rows = $result->fetch_array()) { ?>
                                       <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-                                          <div class="card w-100 bg-light" id="<?php echo $rows['product_id']; ?>">
+                                          <div class="card w-100 bg-light" id="<?php echo $rows['product_id']; ?>" price="<?php echo $rows['product_price']; ?>">
                                               <div class="card-header text-muted border-bottom-0">
                                                   <?php echo $rows['product_category']; ?>
                                               </div>

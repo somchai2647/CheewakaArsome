@@ -55,6 +55,12 @@ if (isset($_REQUEST['login'])) {
     $user_password = $conn->escape_string(md5($_REQUEST['data'][1]['value']));
     $sql = "SELECT user_id FROM `user` WHERE user_id = '$user_id' LIMIT 1";
     $result = $conn->query($sql);
+    if (isset($_POST['rememberme'])) {
+        setcookie('user_id', $user_id,time()+ (10 * 365 * 24 * 60 * 60));
+        echo "create cookie";
+    } else {
+        setcookie('user_id', '');
+    }
     if ($num = $result->num_rows == 1) {
         $sql2 = "SELECT * FROM `user` WHERE user_id = '$user_id' AND user_password = '$user_password'";
         $result = $conn->query($sql2);

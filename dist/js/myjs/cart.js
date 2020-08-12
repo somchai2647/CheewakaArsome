@@ -2,6 +2,7 @@ $(document).ready(function () {
   $(".addcart").click(function (e) {
     e.preventDefault();
     let id = $($(this).parents("div.card")[0]).attr("id");
+    let price = $($(this).parents("div.card")[0]).attr("price");
     addcart = "";
     $.ajax({
       type: "post",
@@ -9,6 +10,7 @@ $(document).ready(function () {
       data: {
         id,
         addcart,
+        price
       },
       success: function (response) {
         if (response == 1) {
@@ -72,7 +74,7 @@ $(document).ready(function () {
       }
     })
   });
-  $('.quantity').change(function () {
+  $('.quantity').on('keyup keypress blur change', function () {
     let id = $($(this).parents("tr.rowproduct")[0]).attr("id");
     let value = $(this).val();
     let price = parseFloat($('#product_price' + id).val());
@@ -81,12 +83,9 @@ $(document).ready(function () {
     let xx = x.toFixed(2);
     let updatequantity = "";
     $('#showprice' + id).text(xx + ".-");
-    $.post("./controller/cart.php", { updatequantity, value, id });
-    // console.log(x);
+    $.post("./controller/cart.php", { updatequantity, value, id }, function (data, textStatus, jqXHR) {
+      $('#total').text(parseFloat(data).toFixed(2)+'.-');
+    });
   });
-  $('#submitcart').click(function (e) {
-    e.preventDefault();
-    let cart = $('#formcart').serializeArray();
-    console.log(cart);
-  });
-});
+  //ทำระบบนับแบบนี้ไปก่อนเดียวค่อยกับมาแก้
+}); 

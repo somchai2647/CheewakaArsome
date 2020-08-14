@@ -88,4 +88,12 @@ $(document).ready(function () {
     });
   });
   //ทำระบบนับแบบนี้ไปก่อนเดียวค่อยกับมาแก้
+  $('#submitcart').click(function(){
+    let addorder = $('#formcart').serializeArray();
+    $.post("controller/order.php",addorder,
+      function (data, textStatus, jqXHR) {
+        
+      }
+    );
+  });
 }); 

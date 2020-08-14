@@ -25,7 +25,7 @@
                       <div class="card-header">
                           <h3 class="card-title">รายการสั่งสินค้า</h3>
                           <div class="card-tools">
-                              <button class="btn btn-sm btn-success mr-4 nbtn" <?php echo ($num > 0) ? "" : "disabled"; ?> id="submitcart" page="html/contants/users/check_order.php">สั่งสินค้า</button>
+                              <button class="btn btn-sm btn-success mr-4" <?php echo ($num > 0) ? "" : "disabled"; ?> id="submitcart">สั่งสินค้า</button>
                               <button id="clearcart" class="btn btn-sm btn-danger mr-4" <?php echo ($num > 0) ? "" : "disabled"; ?>>นำสินค้าออกทั้งหมด</button>
                               <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                   <i class="fas fa-minus"></i></button>

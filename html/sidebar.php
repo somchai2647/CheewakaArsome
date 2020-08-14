@@ -44,10 +44,17 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link nbtn">
+              <a href="#" class="nav-link nbtn" page="html/contants/users/purchase.php">
                 <i class="fas fa-receipt nav-icon"></i>
                 <p>รายการสั่งซื้อ
                   <span class="right badge badge-success">1</span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link nbtn">
+                <i class="fas fa-history nav-icon"></i>
+                <p>ประวัติการสั่งซื้อ
                 </p>
               </a>
             </li>

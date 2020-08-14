@@ -16,12 +16,12 @@ for ($i = 0; $i < count($_REQUEST['product_id']); $i++) {
     ('$order_id','$product_id','$product_price','$product_quantity')";
     $result2 = $conn->query($sql2);
 }
-echo 1;
-// $sql = "INSERT INTO `order`(`user_id`, `adviser_id`) VALUES 
-// ('$user_id','$adviser_id')";
-// $result = $conn->query($sql);
-
-// $order_id = $conn->insert_id;
-// $sql2 = "INSERT INTO `order_list`(`order_id`, `product_id`, `product_price`, `product_quantity`) VALUES 
-// ('$order_id','$product_id','$product_price','$product_quantity')";
-// $result = $conn->query($sql);
+if ($result2) {
+    $sql = "DELETE FROM `cart` WHERE user_id = '$user_id'";
+    $result = $conn->query($sql);
+    if ($result) {
+        echo 1;
+    } else {
+        echo 0;
+    }
+}

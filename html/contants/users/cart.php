@@ -67,7 +67,7 @@
                                             if ($num > 0) {
                                                 while ($product = $result->fetch_array()) { ?>
                                                   <tr class="rowproduct" id="<?php echo $product['id']; ?>">
-                                                      <input type="hidden" name="product_id[]" value="<?php echo $product['id']; ?>">
+                                                      <input type="hidden" name="product_id[]" value="<?php echo $product['product_id']; ?>">
                                                       <td class="text-center">
                                                           <?php echo ++$count; ?>
                                                       </td>
@@ -126,7 +126,7 @@
                                           ราคาสุทธิ:
                                       </th>
                                       <th class="text-center" id="total">
-                                         <?php echo ($count>0) ? number_format($total,2) : "";?>.-
+                                         <?php echo ($count>0) ? number_format($total,2).' .-' : "";?>
                                       </th>
                                       <th style="width: 20%" class="text-center">
                                       <!-- //ทำระบบนับแบบนี้ไปก่อนเดียวค่อยกับมาแก้ -->

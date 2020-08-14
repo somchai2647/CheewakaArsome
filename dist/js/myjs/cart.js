@@ -84,16 +84,37 @@ $(document).ready(function () {
     let updatequantity = "";
     $('#showprice' + id).text(xx + ".-");
     $.post("./controller/cart.php", { updatequantity, value, id }, function (data, textStatus, jqXHR) {
-      $('#total').text(parseFloat(data).toFixed(2)+'.-');
+      $('#total').text(parseFloat(data).toFixed(2) + '.-');
     });
   });
   //ทำระบบนับแบบนี้ไปก่อนเดียวค่อยกับมาแก้
-  $('#submitcart').click(function(){
-    let addorder = $('#formcart').serializeArray();
-    $.post("controller/order.php",addorder,
-      function (data, textStatus, jqXHR) {
-        
+  $('#submitcart').click(function () {
+    Swal.fire({
+      title: 'คุณแน่ใจหรือไม่?',
+      text: "ยืนยันการสั่งซื้อ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'ใช่!',
+      cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+      if (result.value) {
+        let addorder = $('#formcart').serializeArray();
+        $.post("controller/order.php", addorder,
+          function (data, textStatus, jqXHR) {
+            if (data == 1) {
+              Swal.fire(
+                'สั่งซื้อสินค้าเสร็จสิ้น',
+                'รอการอนุมัติรายการ',
+                'success'
+              ).then(function () {
+                window.location.reload();
+              });
+            }
+          }
+        );
       }
-    );
+    })
   });
 }); 

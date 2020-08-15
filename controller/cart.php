@@ -2,10 +2,7 @@
 include "connect.php";
 $user_id = $_SESSION['user_id'];
 if (isset($_POST['countcart'])) {
-    $sql = "SELECT COUNT(*) AS countcart FROM `cart` WHERE user_id = '$user_id'";
-    $result = $conn->query($sql);
-    $rows = $result->fetch_array();
-    echo $rows['countcart'];
+
 }
 
 if (isset($_POST['addcart'])) {

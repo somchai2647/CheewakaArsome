@@ -33,7 +33,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link nbtn" href="#" page="html/contants/users/cart.php">
             <i class="fas fa-shopping-cart"></i>
-            <span class="badge badge-danger navbar-badge" id="numcart"></span>
+            <span class="badge badge-danger navbar-badge" id="numcart"><?php echo ($_SESSION['user_noti'][1]>0)? $_SESSION['user_noti'][1] : ''; ?></span>
           </a>
         </li>
         <li class="nav-item dropdown">

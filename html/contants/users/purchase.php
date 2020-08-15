@@ -29,7 +29,7 @@ function order_status(string $status)
 <div class="content">
     <div class="container-fluid">
         <section class="content">
-            <?php $sql = "SELECT * FROM `order` WHERE user_id = '$user_id' ORDER BY order_id DESC";
+            <?php $sql = "SELECT * FROM `order` WHERE user_id = '$user_id' AND `order_status` = 'w' ORDER BY order_id DESC";
             $result = $conn->query($sql);
             $total = 0.00;
             if ($num = $result->num_rows > 0) {

@@ -2,7 +2,8 @@
 if (!isset($_SESSION['user_level'])) {
   header("location: index.php");
 }
-require_once "controller\connect.php";
+require_once "controller/connect.php";
+require_once "controller/load_noti.php";
 $user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
